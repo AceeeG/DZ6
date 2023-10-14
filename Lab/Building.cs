@@ -10,36 +10,12 @@ namespace Lab
     internal class Building
     {
         private static uint id_counter = 1;
-        private uint id
-        {
-            get;
+        private uint id;
+        private double height;
+        private int level_count;
+        private int entrance_count;
+        private int room_count;
 
-            set;
-        }
-        private double height
-        {
-            get;
-            
-            set;
-        }
-        private int level_count
-        {
-            get;
-
-            set;
-        }
-        private int entrance_count
-        {
-            get;
-
-            set;
-        }
-        private int room_count
-        {
-            get;
-
-            set;
-        }
 
         /// <summary>
         /// Заполняет здание

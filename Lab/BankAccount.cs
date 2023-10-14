@@ -16,24 +16,10 @@ namespace Lab
     {
         Random rnd = new Random();
         private static uint id_counter = 1;
-        private uint id 
-        {
-            get;
+        private uint id;
+        private double balance;
+        private BankType type;
 
-            set;
-        }
-        private double balance
-        {
-            get;
-
-            set;
-        }
-        private BankType type 
-        { 
-            get; 
-
-            set; 
-        }
 
 
         /// <summary>
