@@ -18,8 +18,6 @@ namespace Lab
             BankType type = BankType.Сберегательный;
             BankAccount account = new BankAccount(type);
             account.Print();
-            BankAccount account1 = new BankAccount(type);
-            account.Print();
             Console.WriteLine("Команды:\n<Внести> - если хотите пополнить счёт\n<Снять> - если хотите снять деньги со счёта\n" +
                     "<Баланс> - если хотите посмотреть баланс\n<Выход> - если хотите выйти\n");
 

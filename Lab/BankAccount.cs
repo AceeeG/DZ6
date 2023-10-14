@@ -11,24 +11,30 @@ namespace Lab
         Сберегательный,
         Зарплатный,
         Кредитный,
-
     }
     internal class BankAccount
     {
         Random rnd = new Random();
-        private static int id_counter = 0;
-        private int id;
-        private double balance;
-        private BankType type = BankType.Сберегательный;
-
-        /// <summary>
-        /// Генерирует уникальный ID
-        /// </summary>
-        /// <returns></returns>
-        private static int GenerateID()
+        private static uint id_counter = 1;
+        private uint id 
         {
-            return id_counter++;
+            get;
+
+            set;
         }
+        private double balance
+        {
+            get;
+
+            set;
+        }
+        private BankType type 
+        { 
+            get; 
+
+            set; 
+        }
+
 
         /// <summary>
         /// Конструктор - создаёт банковский счёт
@@ -36,7 +42,8 @@ namespace Lab
         /// <param name="type"></param>
         public BankAccount(BankType type)
         {
-            id = GenerateID();
+            id = id_counter;
+            id_counter++;
             balance = 0.0;
             this.type = type;
         }
@@ -47,8 +54,15 @@ namespace Lab
         /// <param name="money"></param>
         public void DepositMoney(double money)
         {
-            balance += money;
-            Console.WriteLine($"Счёт пополнен на {money} рублей, текущий баланс {balance}");
+            if (money > 0)
+            {
+                balance += money;
+                Console.WriteLine($"Счёт пополнен на {money} рублей, текущий баланс {balance}\n");
+            }
+            else
+            {
+                Console.WriteLine("Сумма должна быть положительной\n");
+            }
         }
 
         /// <summary>
@@ -60,17 +74,17 @@ namespace Lab
             if (money <= balance)
             {
                 balance -= money;
-                Console.WriteLine($"Со счёта снято {money} рублей, текущий баланс {balance}");
+                Console.WriteLine($"Со счёта снято {money} рублей, текущий баланс {balance}\n");
             }
             else
             {
-                Console.WriteLine("На счёте недостаточно средств");
+                Console.WriteLine("На счёте недостаточно средств\n");
             }
         }
 
         public void Balance()
         {
-            Console.WriteLine($"Ваш баланс {balance}");
+            Console.WriteLine($"Ваш баланс {balance}\n");
         }
 
         /// <summary>
