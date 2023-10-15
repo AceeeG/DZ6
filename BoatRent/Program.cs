@@ -8,6 +8,8 @@ namespace BoatRent
     {
         static void Main(string[] link)
         {
+            Console.WriteLine("Добро пожаловать в <ReHub>");
+
             BoatShop shop = new BoatShop();
 
             try

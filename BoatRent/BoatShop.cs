@@ -48,7 +48,7 @@ namespace BoatRent
         /// </summary>
         public void PrintAllBoats()
         {
-            Console.WriteLine("В наличии:");
+            Console.WriteLine("В наличии данные лодки:\n");
             foreach (Boat boat in boats)
             {
                 boat.Print();
