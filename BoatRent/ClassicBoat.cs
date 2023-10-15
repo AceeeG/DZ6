@@ -10,6 +10,18 @@ namespace BoatRent
     {
         public int oars;
 
+        public int Oars
+        {
+            get
+            { 
+                return oars; 
+            }
+            set
+            {
+                oars = value;
+            }
+        }
+
 
         public ClassicBoat(string name, uint capacity, double rent_price, int horsepower)
             : base(name, capacity, rent_price)

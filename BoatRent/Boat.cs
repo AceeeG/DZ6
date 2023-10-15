@@ -12,9 +12,45 @@ namespace BoatRent
     {
         protected string name;
 
+        public string Name
+        {
+            get 
+            {
+                return name; 
+            }
+            set 
+            { 
+                name = value; 
+            }
+        }
+        
         protected uint capacity;
 
+        public uint Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+            set
+            {
+                capacity = value;
+            }
+        }
+
         protected double rent_price;
+
+        public double RentPrice
+        {
+            get
+            {
+                return rent_price;
+            }
+            set 
+            {
+                rent_price = value;
+            }
+        }
 
 
         public Boat(string name, uint capacity, double rent_price)

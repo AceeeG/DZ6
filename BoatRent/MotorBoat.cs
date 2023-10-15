@@ -12,6 +12,18 @@ namespace BoatRent
     {
         public int horsepower;
 
+        public int Horsepower
+        {
+            get
+            { 
+                return horsepower; 
+            }
+            set
+            {
+                horsepower = value;
+            }
+        }
+
 
         public MotorBoat(string name, uint capacity, double rent_price, int horsepower)
             : base(name, capacity, rent_price)
@@ -43,7 +55,7 @@ namespace BoatRent
             {
                 do
                 {
-                    Console.WriteLine("Вы не ввели число");
+                    Console.WriteLine("Вы не ввели число\n");
                     hour_flag = Int32.TryParse(Console.ReadLine(), out hours);
                 } while(!hour_flag);
             }
