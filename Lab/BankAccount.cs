@@ -10,7 +10,6 @@ namespace Lab
     }
     internal class BankAccount
     {
-        Random rnd = new Random();
         private static uint id_counter = 1;
         private uint id;
         private double balance;

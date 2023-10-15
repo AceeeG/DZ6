@@ -61,7 +61,6 @@
         public abstract void Print();
         public abstract void Start();
         public abstract void End();
-
         public abstract double CalculatePrice();
     }
 }

@@ -31,9 +31,9 @@ namespace Lab
                         bool dep_money_flag = double.TryParse(Console.ReadLine(), out double dep_money);
                         if (!dep_money_flag)
                         {
-                            Console.WriteLine("Вы не ввели число");
                             do
                             {
+                                Console.WriteLine("Вы не ввели число, повторите");
                                 dep_money_flag = double.TryParse(Console.ReadLine(), out dep_money);
                             } while (!dep_money_flag);
                         }
