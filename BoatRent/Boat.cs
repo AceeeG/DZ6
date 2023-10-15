@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-namespace BoatRent
+﻿namespace BoatRent
 {
 
     internal abstract class Boat
@@ -52,7 +45,12 @@ namespace BoatRent
             }
         }
 
-
+        /// <summary>
+        /// Заполняет экзепляр класса Boat
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="capacity"></param>
+        /// <param name="rent_price"></param>
         public Boat(string name, uint capacity, double rent_price)
         {
             this.name = name;

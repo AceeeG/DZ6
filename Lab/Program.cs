@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Remoting.Activation;
 
 namespace Lab
 {
@@ -86,6 +83,14 @@ namespace Lab
                     case "высота этажа":
                         Console.WriteLine("Введите номер этажа\n");
                         bool floor_flag = int.TryParse(Console.ReadLine(), out int floor);
+                        if (!floor_flag || (floor < 0 || floor > building.GetLevelCount()))
+                        {
+                            do
+                            {
+                                Console.WriteLine("Такого этажа нет\n");
+                                floor_flag = int.TryParse(Console.ReadLine(), out floor);
+                            } while (!floor_flag || (floor < 0 || floor > building.GetLevelCount()));
+                        }
                         building.CalculateHeightOfLevel(floor);
                         break;
 

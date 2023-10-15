@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Lab
 {
     internal class Building
@@ -33,7 +27,7 @@ namespace Lab
         /// <summary>
         /// Считает и выводит высоту этажа
         /// </summary>
-        /// <param name="level"></param>
+        /// <param name="level"> этаж </param>
         public void CalculateHeightOfLevel(int level)
         {
             double level_height = height/level_count * level;
@@ -56,6 +50,15 @@ namespace Lab
         {
             double room_in_floor = (room_count / entrance_count)/level_count;
             Console.WriteLine($"На одном этаже комнат: {room_in_floor}");
+        }
+
+        /// <summary>
+        /// Возращает количество этажей
+        /// </summary>
+        /// <returns> Количество этажей</returns>
+        public int GetLevelCount()
+        {
+            return level_count;
         }
 
         /// <summary>

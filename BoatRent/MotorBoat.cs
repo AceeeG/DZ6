@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+
 
 namespace BoatRent
 {
@@ -24,29 +19,48 @@ namespace BoatRent
             }
         }
 
-
+        /// <summary>
+        /// Заполняет экземпляр класса MotorBoat
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="capacity"></param>
+        /// <param name="rent_price"></param>
+        /// <param name="horsepower"></param>
         public MotorBoat(string name, uint capacity, double rent_price, int horsepower)
             : base(name, capacity, rent_price)
         {
             this.horsepower = horsepower;
         }
 
+        /// <summary>
+        /// Выводит информацию о экземпляре
+        /// </summary>
         public override void Print()
         {
             Console.WriteLine($"Лодка {name}, вместимость {capacity} человек(а), мощность {horsepower} HP\n");
         }
 
+        /// <summary>
+        /// Выводит информацию о экземпляре
+        /// </summary>
         public override void Start()
         {
             
             Console.WriteLine($"Начали свой путь на лодке {name}, мощностью {horsepower} HP\n");
         }
 
+        /// <summary>
+        /// Выводит информацию о экземпляре
+        /// </summary>
         public override void End()
         {
             Console.WriteLine($"Закончили свой путь на лодке {name}\n");
         }
 
+        /// <summary>
+        /// Высчитывает цену
+        /// </summary>
+        /// <returns></returns>
         public override double CalculatePrice()
         {
             Console.WriteLine("Сколько часов вы плавали\n");
