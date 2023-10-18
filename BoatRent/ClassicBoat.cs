@@ -5,7 +5,7 @@ namespace BoatRent
 {
     internal class ClassicBoat : Boat
     {
-        public int oars;
+        private int oars;
 
         public int Oars
         {
@@ -26,10 +26,10 @@ namespace BoatRent
         /// <param name="capacity"></param>
         /// <param name="rent_price"></param>
         /// <param name="horsepower"></param>
-        public ClassicBoat(string name, uint capacity, double rent_price, int horsepower)
+        public ClassicBoat(string name, uint capacity, double rent_price, int oars)
             : base(name, capacity, rent_price)
         {
-            this.oars = horsepower;
+            this.oars = oars;
         }
 
         /// <summary>

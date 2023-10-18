@@ -5,7 +5,7 @@ namespace BoatRent
 {
     internal class MotorBoat : Boat
     {
-        public int horsepower;
+        private int horsepower;
 
         public int Horsepower
         {
