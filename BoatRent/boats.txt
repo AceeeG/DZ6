@@ -1,4 +1,0 @@
-MotorBoat,Titanic,200,650000,300
-ClassicBoat,Победа,8,600,4
-MotorBoat,Сырник,20,5000,25
-ClassicBoat,Беда,4,200,2

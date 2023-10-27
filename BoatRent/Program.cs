@@ -14,32 +14,32 @@ namespace BoatRent
 
             try
         {
-            using (StreamReader reader = new StreamReader(link[0]))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                using (StreamReader reader = new StreamReader("boats.txt"))
                 {
-                    string[] data = line.Split(',');
-                    if (data.Length == 5)
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        string boat_type = data[0];
-                        string name = data[1];
-                        bool capacity_flag = uint.TryParse(data[2], out uint capacity);
-                        bool price_flag = double.TryParse(data[3], out double rent_price);
+                        string[] data = line.Split(',');
+                        if (data.Length == 5)
+                        {
+                            string boat_type = data[0];
+                            string name = data[1];
+                            bool capacity_flag = uint.TryParse(data[2], out uint capacity);
+                            bool price_flag = double.TryParse(data[3], out double rent_price);
 
-                        if (boat_type == "MotorBoat")
-                        {
-                            bool horsepower_flag = Int32.TryParse(data[4], out int horsepower);
-                            shop.AddBoat(new MotorBoat(name, capacity, rent_price, horsepower));
-                        }
-                        else if (boat_type == "ClassicBoat")
-                        {
-                            bool oars_flag = Int32.TryParse(data[4], out int oars);
-                            shop.AddBoat(new ClassicBoat(name, capacity, rent_price, oars));
+                            if (boat_type == "MotorBoat")
+                            {
+                                bool horsepower_flag = Int32.TryParse(data[4], out int horsepower);
+                                shop.AddBoat(new MotorBoat(name, capacity, rent_price, horsepower));
+                            }
+                            else if (boat_type == "ClassicBoat")
+                            {
+                                bool oars_flag = Int32.TryParse(data[4], out int oars);
+                                shop.AddBoat(new ClassicBoat(name, capacity, rent_price, oars));
+                            }
                         }
                     }
                 }
-            }
         }
         catch (FileNotFoundException)
         {
